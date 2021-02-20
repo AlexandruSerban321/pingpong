@@ -1,21 +1,25 @@
 require("player")
 require("ball")
+require("ai")
 
 function love.load()
    Player:load()
    Ball:load()
+   Ai:load()
 end
 
 
 function love.update(dt)
    Player:update(dt)
    Ball:update(dt)
+   Ai:update(dt)
 end
 
 
 function love.draw()
    Player:draw()
    Ball:draw()
+   Ai:draw()
 end
 
 function checkCollision(a, b)
