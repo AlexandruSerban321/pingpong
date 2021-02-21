@@ -17,14 +17,16 @@ function Score:winCondition()
     Ball.y = love.graphics.getHeight()/2 - Ball.height/2
     Ball.speed = 200
     Ball.yVel = 0
-    Player.y = love.graphics.getHeight()/2
+    Player.y = love.graphics.getHeight()/2 - Player.height/2
+    Ai.y = Player.y
     self.aiScore = self.aiScore+1
   elseif Ball.x > love.graphics.getWidth() then
     Ball.x = love.graphics.getWidth()/2 - Ball.width/2
     Ball.y = love.graphics.getHeight()/2 - Ball.height/2
     Ball.speed = 200
     Ball.yVel = 0
-    Player.y = love.graphics.getHeight/2
+    Player.y = love.graphics.getHeight/2 - Player.height/2
+    Ai.y = Player.y
     self.playerScore = self.playerScore+1
   end
 end
