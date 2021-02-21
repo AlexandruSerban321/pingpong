@@ -24,7 +24,7 @@ function Score:winCondition()
     Ball.yVel = 0
     Ball.x = love.graphics.getWidth()/2 - Ball.width/2
     Ball.y = love.graphics.getHeight()/2 - Ball.height/2
-    Player.y = love.graphics.getHeight/2 - Player.height/2
+    Player.y = love.graphics.getHeight()/2 - Player.height/2
     Ai.y = Player.y
     self.playerScore = self.playerScore+1
   end
