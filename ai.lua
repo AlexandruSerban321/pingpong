@@ -4,7 +4,7 @@ function Ai:load()
   self.width =Player.width
   self.height = Player.height
   self.x = love.graphics.getWidth() - self.width - 50
-  self.y = love.graphics.getHeight() / 2
+  self.y = Player.y
   self.yVel = 0
   self.speed = 500
 end
