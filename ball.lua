@@ -1,13 +1,13 @@
 Ball = {}
 
 function Ball:load()
-   self.x = love.graphics.getWidth() / 2
-   self.y = love.graphics.getHeight() / 2
    self.width = 15
    self.height = 15
    self.speed = 200
    self.xVel = -self.speed
    self.yVel = 0
+   self.x = love.graphics.getWidth() / 2
+   self.y = love.graphics.getHeight() / 2 - self.height/2
 end
 
 
