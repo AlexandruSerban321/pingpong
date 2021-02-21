@@ -13,6 +13,7 @@ end
 function Score:winCondition()
   if Ball.x < 0 then
     Ball.speed = 200
+    Ball.xVel = Ball.speed
     Ball.yVel = 0
     Ball.x = love.graphics.getWidth()/2 - Ball.width/2
     Ball.y = love.graphics.getHeight()/2 - Ball.height/2
@@ -21,6 +22,7 @@ function Score:winCondition()
     self.aiScore = self.aiScore+1
   elseif Ball.x > love.graphics.getWidth() then
     Ball.speed = 200
+    Ball.xVel = -Ball.speed
     Ball.yVel = 0
     Ball.x = love.graphics.getWidth()/2 - Ball.width/2
     Ball.y = love.graphics.getHeight()/2 - Ball.height/2
