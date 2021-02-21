@@ -3,12 +3,11 @@ Score={}
 function Score:load()
   self.playerScore = 0
   self.aiScore = 0
-  self.font = love.graphics.newFont(40)
+  self.font = love.graphics.newFont(30)
 end
 
 function Score:update(dt)
   self:winCondition()
-  self.score = self.playerScore ..":" ..self.aiScore
 end
 
 function Score:winCondition()
@@ -33,5 +32,6 @@ end
 
 function Score:draw()
   love.graphics.setFont(self.font)
-  love.graphics.print(self.score, love.graphics.getWidth()/2)
+  love.graphics.print('Ai:'..self.aiScore, Ai.x-Ai.width)
+  love.graphics.print('Player:'..self.playerScore, Player.x-Player.width)
 end
