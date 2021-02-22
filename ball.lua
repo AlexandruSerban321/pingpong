@@ -20,7 +20,9 @@ end
 function Ball:collide()
 
    if checkCollision(self, Player) then
-      self.speed = self.speed + 5
+      if self.speed <= 500 then
+        self.speed = self.speed + 5
+      end
       self.xVel = self.speed
       local middleBall = self.y + self.height / 2
       local middlePlayer = Player.y + Player.height / 2
@@ -28,7 +30,9 @@ function Ball:collide()
    end
 
    if checkCollision(self, Ai) then
-     self.speed = self.speed + 5
+     if self.speed <= 500 then
+       self.speed = self.speed + 5
+     end
      self.xVel = -self.speed
      local middleBall = self.y + self.height/2
      local middleAi = Ai.y + Ai.height/2
