@@ -12,6 +12,9 @@ end
 
 
 function love.update(dt)
+  if dt > 0.5 then
+    dt = 0.5
+  end
    Player:update(dt)
    Ball:update(dt)
    Ai:update(dt)
