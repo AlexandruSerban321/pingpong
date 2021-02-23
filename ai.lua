@@ -12,6 +12,7 @@ end
 function Ai:update(dt)
   self:acquireTarget()
   self:move(dt)
+  self:checkboundries()
 end
 
 function Ai:move(dt)
@@ -26,6 +27,14 @@ function Ai:acquireTarget()
    else
       self.yVel = 0
    end
+end
+
+function Ai:checkboundries()
+  if self.y < 0 then
+    self.y = 0
+  elseif self.y+self.height>love.graphics.getHeight() then
+    self.y = love.graphics.getHeight()-self.height
+  end
 end
 
 function Ai:draw()
