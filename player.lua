@@ -21,7 +21,7 @@ function Player:move(dt)
   end
 end
 
-function Player:checkboundries(dt)
+function Player:checkboundries()
   if self.y < 0 then
     self.y = 0
   elseif self.y+self.height>love.graphics.getHeight() then
