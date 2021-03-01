@@ -1,6 +1,7 @@
 Score={}
 
 function Score:load()
+  self.image = love.graphics.newImage("assets/universe.png")
   self.playerScore = 0
   self.aiScore = 0
   self.font = love.graphics.newFont(30)
@@ -33,6 +34,7 @@ function Score:winCondition()
 end
 
 function Score:draw()
+  love.graphics.draw(self.image,0,0)
   love.graphics.setFont(self.font)
   love.graphics.print('Ai:'..self.aiScore, Ai.x-Ai.width)
   love.graphics.print('Player:'..self.playerScore, Player.x-Player.width)
