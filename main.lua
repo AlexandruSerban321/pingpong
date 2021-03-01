@@ -23,10 +23,10 @@ end
 
 
 function love.draw()
+   Score:draw()
    Player:draw()
    Ball:draw()
    Ai:draw()
-   Score:draw()
 end
 
 function checkCollision(a, b)
