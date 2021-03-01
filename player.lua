@@ -1,8 +1,9 @@
 Player = {}
 
 function Player:load()
-   self.width = 15
-   self.height = 80
+   self.image = love.graphics.newImage("assets/player.png")
+   self.width = self.image:getWidth()
+   self.height = self.image:getHeight()
    self.speed = 500
    self.x = 50
    self.y = love.graphics.getHeight() / 2 - self.height/2
@@ -30,5 +31,5 @@ function Player:checkboundries()
 end
 
 function Player:draw()
-   love.graphics.rectangle("fill", self.x, self.y, self.width, self.height)
+   love.graphics.draw(self.image,self.x,self.y)
 end

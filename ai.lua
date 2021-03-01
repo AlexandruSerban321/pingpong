@@ -1,6 +1,7 @@
 Ai = {}
 
 function Ai:load()
+  self.image = love.graphics.newImage("assets/ai.png")
   self.width =Player.width
   self.height = Player.height
   self.x = love.graphics.getWidth() - self.width - 50
@@ -38,5 +39,5 @@ function Ai:checkboundries()
 end
 
 function Ai:draw()
-  love.graphics.rectangle('fill',self.x,self.y,self.width,self.height)
+  love.graphics.draw(self.image,self.x,self.y)
 end
