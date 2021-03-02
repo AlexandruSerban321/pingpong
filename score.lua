@@ -5,7 +5,6 @@ function Score:load()
   self.playerScore = 0
   self.aiScore = 0
   self.font = love.graphics.newFont(30)
-  self.scoreText = self.playerScore ..":"..self.aiScore
 end
 
 function Score:update(dt)
@@ -37,5 +36,5 @@ end
 function Score:draw()
   love.graphics.draw(self.image,0,0)
   love.graphics.setFont(self.font)
-  love.graphics.print(self.scoreText,love.graphics.getWidth()/2-self.font:getWidth(self.scoreText))
+  love.graphics.print(self.playerScore..':'..self.aiScore,love.graphics.getWidth()/2-self.font:getWidth(self.playerScore..':'..self.aiScore))
 end
