@@ -22,7 +22,7 @@ end
 function Ball:collide()
 
    if checkCollision(self, Player) then
-      if self.speed <= 500 then
+      if self.speed <= 1000 then
         self.speed = self.speed + 10
       end
       self.xVel = self.speed
