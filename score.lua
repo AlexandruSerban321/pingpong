@@ -12,24 +12,20 @@ function Score:update(dt)
 end
 
 function Score:winCondition()
-  if Ball.x < 0 then
+  if Ball.x < 0  or Ball.x > love.graphics.getWidth() then
     Ball.speed = 200
-    Ball.xVel = Ball.speed
+    if Ball.x  < 0 then
+      Ball.xVel = Ball.speed
+      self.aiScore = self.aiScore+1
+    elseif Ball.x > love.graphics.getWidth() then
+      Ball.xVel = -Ball.speed
+      self.playerScore = self.playerScore+1
+    end
     Ball.yVel = 0
     Ball.x = love.graphics.getWidth()/2 - Ball.width/2
     Ball.y = love.graphics.getHeight()/2 - Ball.height/2
     Player.y = love.graphics.getHeight()/2 - Player.height/2
     Ai.y = Player.y
-    self.aiScore = self.aiScore+1
-  elseif Ball.x > love.graphics.getWidth() then
-    Ball.speed = 200
-    Ball.xVel = -Ball.speed
-    Ball.yVel = 0
-    Ball.x = love.graphics.getWidth()/2 - Ball.width/2
-    Ball.y = love.graphics.getHeight()/2 - Ball.height/2
-    Player.y = love.graphics.getHeight()/2 - Player.height/2
-    Ai.y = Player.y
-    self.playerScore = self.playerScore+1
   end
 end
 
