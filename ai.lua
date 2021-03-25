@@ -8,12 +8,18 @@ function Ai:load()
   self.y = Player.y
   self.yVel = 0
   self.speed = 500
+  self.timer = 0
+  self.rate = 0.2
 end
 
 function Ai:update(dt)
-  self:acquireTarget()
-  self:move(dt)
   self:checkboundries()
+  self:move(dt)
+  self.timer = self.timer + dt
+  if self.timer > self.rate then
+     self.timer = 0
+     self:acquireTarget()
+  end
 end
 
 function Ai:move(dt)
