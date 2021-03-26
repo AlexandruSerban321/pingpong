@@ -3,7 +3,7 @@ Ball = {}
 function Ball:load()
    collisionsound = love.audio.newSource("assets/sounds/collision.wav", "static")
    collisionsound:setPitch(0.8)
-   collisionsound:setVolume(0.7)
+   collisionsound:setVolume(0.3)
    self.image = love.graphics.newImage("assets/ball.png")
    self.width = self.image:getWidth()
    self.height = self.image:getHeight()
