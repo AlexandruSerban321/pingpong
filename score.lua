@@ -1,6 +1,8 @@
 Score={}
 
 function Score:load()
+  backgound_music = love.audio.newSource("assets/sounds/background.wav","stream")
+  backgound_music:setVolume(0.4)
   self.image = love.graphics.newImage("assets/universe.png")
   self.playerScore = 0
   self.aiScore = 0
@@ -8,6 +10,7 @@ function Score:load()
 end
 
 function Score:update(dt)
+  backgound_music:play()
   self:winCondition()
 end
 
