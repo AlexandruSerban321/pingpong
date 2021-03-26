@@ -1,6 +1,9 @@
 Ball = {}
 
 function Ball:load()
+   collisionsound = love.audio.newSource("assets/sounds/collision.wav", "static")
+   collisionsound:setPitch(0.8)
+   collisionsound:setVolume(0.7)
    self.image = love.graphics.newImage("assets/ball.png")
    self.width = self.image:getWidth()
    self.height = self.image:getHeight()
@@ -22,6 +25,7 @@ end
 function Ball:collide()
 
    if checkCollision(self, Player) then
+      collisionsound:play()
       if self.speed <= 1000 then
         self.speed = self.speed + 10
       end
@@ -32,6 +36,7 @@ function Ball:collide()
    end
 
    if checkCollision(self, Ai) then
+     collisionsound:play()
      if self.speed <= 500 then
        self.speed = self.speed + 10
      end
@@ -42,9 +47,11 @@ function Ball:collide()
    end
 
    if self.y < 0 then
+      collisionsound:play()
       self.y = 0
       self.yVel = -self.yVel
    elseif self.y + self.height > love.graphics.getHeight() then
+      collisionsound:play()
       self.y = love.graphics.getHeight() - self.height
       self.yVel = -self.yVel
    end
