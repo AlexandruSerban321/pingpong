@@ -9,8 +9,7 @@ function Ball:load()
    self.height = self.image:getHeight()
    self.speed = 300
    self.xVel = -self.speed
-   math.randomseed(os.time())
-   self.yVel = math.random(-360,360)
+   self.yVel = love.math.random(-360,360)
    self.x = love.graphics.getWidth() / 2
    self.y = love.graphics.getHeight() / 2 - self.height/2
 end
