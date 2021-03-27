@@ -37,7 +37,7 @@ function Ball:collide()
 
    if checkCollision(self, Ai) then
      collisionsound:play()
-     if self.speed <= 500 then
+     if self.speed <= 1000 then
        self.speed = self.speed + 10
      end
      self.xVel = -self.speed
